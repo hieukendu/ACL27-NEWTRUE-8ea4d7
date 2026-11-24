@@ -1,32 +1,53 @@
-# Only the prepared project payload is eligible for publishing.
-*
-!*/
-!artifact/**
-!manuscript/**
-!README.md
-!HANDOVER.md
-!review.md
-!ARCHIVE_MANIFEST.json
-!.gitignore
-# Private archive administration metadata; keep out of the public repository.
-/HANDOVER.md
+# Keep project sources, manuscripts, manuals, experiment inputs/results, and
+# all other reproducibility artefacts by default.
+
+# Local environment files and environment directories.
+.env
+.env.*
+*.env
+!.env.example
+.venv/
+venv/
+ENV/
+env/
+
+# OS, editor, and temporary metadata.
+.DS_Store
+.DS_Store?
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.#*
+
+# Tool caches and generated local metadata.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Private archive bookkeeping metadata.
 /ARCHIVE_MANIFEST.json
 /ARCHIVE_RECEIPT.json
-/manuscript/main.pdf
-/HANDOVER.pdf
+
+# LaTeX build metadata (source, figures, PDFs, and experiment logs remain
+# trackable).
 *.aux
 *.bbl
 *.blg
-*.fls
 *.fdb_latexmk
-*.log
+*.fls
+*.lof
+*.lot
+*.nav
 *.out
+*.snm
 *.synctex.gz
-.DS_Store
-__pycache__/
-.venv/
-reviews/
-**/audit*/
-**/audit_*
-**/make_comic*
-**/comic/icons/
+*.toc
