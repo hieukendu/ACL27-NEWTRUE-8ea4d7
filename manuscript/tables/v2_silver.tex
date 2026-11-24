@@ -1,0 +1,15 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{4pt}
+\begin{tabular}{@{}l rrrrc@{}}
+\toprule
+ & & & \multicolumn{3}{c}{rebut} \\ \cmidrule(l){4-6}
+Judge & acc. & $\kappa$ & P & R & rate (\%) \\
+\midrule
+Haiku 5.5 (primary) & 0.82 & 0.73 & 0.91 & 0.95 & 42 \\
+3-judge majority & 0.81 & 0.72 & 0.94 & 0.91 & 39 \\
+Qwen2.5-7B & 0.80 & 0.70 & 0.88 & 0.92 & 42 \\
+Mistral-7B & 0.70 & 0.56 & 0.99 & 0.64 & 26 \\
+\midrule
+Silver (Sonnet 5.5) & \multicolumn{4}{c}{--} & 40 \\
+\bottomrule\end{tabular}
+\caption{Agreement with automatic Sonnet 5.5 labels (602 responses). P/R: rebuttal precision/recall. These reference labels are not human judgements.}
+\label{tab:silver}\end{table}

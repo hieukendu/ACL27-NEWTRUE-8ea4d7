@@ -1,0 +1,22 @@
+\begin{table*}[t]\centering\small\setlength\tabcolsep{3.4pt}
+\begin{tabular}{l ccc c c c c}
+\toprule
+ & \multicolumn{2}{c}{rebut true} & \multicolumn{2}{c}{rebut false} & defer & \multicolumn{2}{c}{gaps (pts)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){7-8}
+Condition & \NEW{}-post & \OLD{} & \ANC{} (paired) & \STRE{} & \NEW{}-post & \NEW{}$-$\OLD{} & $J_{\text{anc}}$ \\
+\midrule
+Plain & 29 {\scriptsize[12,48]} & 8 & 47 & 37 & 37 & +21 {\scriptsize[7,38]} & +12 {\scriptsize[1,23]} \\
+\midrule
+Premise-check & 69 {\scriptsize[50,88]} & 56 & 74 & 70 & 5 & +13 {\scriptsize[-0,30]} & 0 {\scriptsize[-10,9]} \\
+Date & 25 {\scriptsize[10,40]} & 10 & 41 & 29 & 41 & +15 {\scriptsize[5,27]} & +12 {\scriptsize[3,21]} \\
+Cutoff-stated & 16 {\scriptsize[7,27]} & 6 & 35 & 20 & 56 & +10 {\scriptsize[2,19]} & +14 {\scriptsize[4,25]} \\
+\midrule
+RAG-fresh (oracle) & 1 {\scriptsize[0,2]} & 1 & 58 & 51 & 45 & 0 {\scriptsize[-2,2]} & +57 {\scriptsize[34,79]} \\
+RAG-mixed & 7 {\scriptsize[2,13]} & 0 & 66 & 41 & 26 & +7 {\scriptsize[2,13]} & +58 {\scriptsize[39,76]} \\
+RAG-stale & 47 {\scriptsize[21,75]} & 4 & 55 & 4 & 44 & +43 {\scriptsize[13,73]} & +4 {\scriptsize[-5,14]} \\
+\midrule
+Policy (ours) & 22 {\scriptsize[8,36]} & 13 & 31 & 24 & 64 & +9 {\scriptsize[-2,22]} & +4 {\scriptsize[-13,19]} \\
+\quad -- no date & 20 {\scriptsize[7,33]} & 9 & 30 & 24 & 63 & +11 {\scriptsize[1,24]} & +5 {\scriptsize[-10,19]} \\
+\bottomrule\end{tabular}
+\caption{All 7 models. Rebuttal and deferral rates (\%), primary judge (Claude Haiku 5.5). True premises: \NEW{}-post ($n{=}72$, became true on or after 2025-01-01, after every model's release) and \OLD{} ($n{=}43$, unchanged since 2022 or earlier). False premises: \ANC{} ($n{=}42$), a holder of the \emph{same} role at the \emph{same} entity who left before 2016, paired with its \NEW{}-post item; \STRE{} ($n{=}24$), a holder replaced before 2021. $J_{\text{anc}}$ = rebut(\ANC{}) $-$ rebut(paired \NEW{}-post): 0 means the model rebuts a newly-true premise as often as a long-false one about the same entity. 95\% CIs from a two-level bootstrap over models and items.}
+\label{tab:main}\end{table*}

@@ -1,0 +1,32 @@
+# Only the prepared project payload is eligible for publishing.
+*
+!*/
+!artifact/**
+!manuscript/**
+!README.md
+!HANDOVER.md
+!review.md
+!ARCHIVE_MANIFEST.json
+!.gitignore
+# Private archive administration metadata; keep out of the public repository.
+/HANDOVER.md
+/ARCHIVE_MANIFEST.json
+/ARCHIVE_RECEIPT.json
+/manuscript/main.pdf
+/HANDOVER.pdf
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.synctex.gz
+.DS_Store
+__pycache__/
+.venv/
+reviews/
+**/audit*/
+**/audit_*
+**/make_comic*
+**/comic/icons/

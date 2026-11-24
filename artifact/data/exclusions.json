@@ -1,0 +1,20 @@
+{
+ "OLD-0313": "Wikipedia: disambiguation page only; Karlsen's tenure as CEO (reportedly from 2022) cannot be confirmed as pre-2022; Haiku names Jacob Schram",
+ "OLD-0318": "Wikipedia: CEO 2011-2020 and again since 2023 -> role changed after 2022 (violates OLD definition)",
+ "OLD-0321": "Wikipedia: Hayes retired as RTX CEO effective 2 May 2024 -> premise false",
+ "OLD-0322": "Wikipedia: Scolese retired 10 July 2026 -> premise false at snapshot",
+ "OLD-0372": "Wikipedia: Hadi resigned in 2022 -> premise false",
+ "OLD-0380": "No English Wikipedia lead; cannot be verified",
+ "OLD-0388": "No English Wikipedia lead; cannot be verified",
+ "OLD-0389": "Wikipedia: federal minister since 2025; mayoralty titular/ambiguous",
+ "OLD-0390": "Wikipedia: mayor of Wijk bij Duurstede 2012-2019, now mayor of Amstelveen -> premise false",
+ "OLD-0391": "Wikipedia: Governor of Banten 2017-2022 -> premise false",
+ "NEW-0000": "reinstatement (Altman, CEO of OpenAI before Nov 2023)",
+ "NEW-0035": "reinstatement (Seoane)",
+ "NEW-0043": "reinstatement (Sumudica)",
+ "NEW-0125": "reinstatement (Tusk, PM 2007-2014)",
+ "NEW-0003": "reinstatement (Hemsley: UnitedHealth CEO 2006-2017, again from May 2025; earlier term missing in Wikidata)",
+ "NEW-0060": "reinstatement (Zardari: President of Pakistan 2008-2013, again from 2024)",
+ "NEW-0080": "Wikipedia: acting president of Kosovo April 2026 until October 2026 -> no longer in office at the 2026-11-10 snapshot",
+ "OLD-0315": "Wikipedia (TASS infobox, key_people, citing RBC 2023-07-05 'Mishustin appointed ... general director of TASS'): Kondrashov became director general of TASS in July 2023 -> role changed after 2022 (violates OLD definition); found by round-3 reviewer R3, verified 2026-11-18"
+}

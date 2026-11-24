@@ -1,0 +1,53 @@
+\section{Additional Results}
+\label{app:extra}
+
+\paragraph{Effective cutoffs.}
+Figure~\ref{fig:cutoff} plots the date probe by model: the horizontal axis is the half-year of a role change, and the vertical axis is the share of transitions for which the model prefers the new holder. Dark lines show significant fitted steps, with shaded bootstrap 95\% CIs. Five models show a significant step (permutation $p<.05$); Qwen2.5-0.5B, Qwen2.5-1.5B and SmolLM2-1.7B do not. Table~\ref{tab:cutoffnorm} compares summed name log-probabilities with averages per token: the set of models with a step is unchanged, but the step dates move by up to three years, and several fall well before documented cutoffs (Phi-3.5-mini documents October 2023). We therefore treat the probe as a measure of whether a model knows office holders, not as a cutoff estimate, and rely on release dates for the claim that \NEW{}-post premises postdate the training data.
+
+\paragraph{Belief in the predecessor.}
+Each \NEW{}-post item is paired with the \STP{} item about the same entity's predecessor. Over all model--item pairs (all models, primary judge; $n=\VPredN$), models rebut the newly-true premise \VPredYes\% of the time when their own yes/no probe endorses the predecessor ($P(\textit{No})<0.5$; $n=\VPredNYes$) and \VPredNo\% otherwise; with entity popularity and model controlled the coefficient is $\VPredCoef$ ($p=\VPredP$).
+
+\paragraph{Per model.}
+Table~\ref{tab:permodel3} gives per-model rates for the triples, exposing variation hidden by the pooled estimates: the smallest models rarely rebut under \textsc{Plain}, but some switch to near-universal rebuttal under our premise check. Table~\ref{tab:large} reports the larger models separately, using the same prompts and greedy decoding on an NVIDIA GB10 GPU. Their lower rebuttal rates on long-true premises do not extend uniformly to new truths.
+
+Figure~\ref{fig:tradeoff}a plots rebuttals of \NEW{} on the horizontal axis and false premises on the vertical axis. Filled points use \ANC{}; hollow points use \SWP{}. Brown marks premise-check conditions, amber evidence-only conditions, and dark points the remaining conditions. Points above the diagonal rebut falsehoods more often than new truths; moving toward the upper left improves both rates. Fresh evidence lies near that corner, whereas stale evidence moves responses toward equal rebuttal of true and false premises.
+
+\paragraph{Belief probe.}
+In Figure~\ref{fig:tradeoff}b, dots give each model's mean $P(\textit{No})$ on the yes/no probe; bars average over models. All \VBeliefPoolN{} pooled models give newly-true premises a higher mean $P(\textit{No})$ than premises false since before 2021, but \VBeliefPoolOldGt{} of them also give long-true premises a higher $P(\textit{No})$ than those falsehoods. The probe therefore reflects unfamiliarity at least as much as belief, and we use it only descriptively.
+
+\paragraph{Qwen3.5-4B.}
+Qwen3.5-4B (2026) ran \textsc{Plain}, \textsc{Premise-check} and \textsc{Policy} on the main grid only. Under \textsc{Plain} it rebuts \WQtfNew\% of \NEW{}-post premises (changes in 2025: \WQtfNewTwentyFive\%; in 2026: \WQtfNewTwentySix\%), \WQtfOld\% of \OLD{} and \WQtfStre\% of \STRE{} premises; under \textsc{Premise-check} it rebuts \WQtfNewPrem\% of \NEW{}-post premises, and under \textsc{Policy} \WQtfNewPol\%. As a 2026 model it may have seen some 2025 changes, so it is not pooled.
+
+\paragraph{Templates.}
+Table~\ref{tab:sweep} asks the same items with all three templates under \textsc{Plain}, using the primary judge. The inconsistency column counts \NEW{}-post items rebutted under some wordings but not others; \NEV{} premises remain false under every template. The large inconsistency shares among knowledgeable models show that a single wording can obscure item-level variation.
+
+\paragraph{Entity popularity.}
+Figure~\ref{fig:pop} groups entities into low, middle and high sitelink tertiles. The vertical axis gives \textsc{Plain} rebuttal rates pooled over all models; error bars are 95\% item-bootstrap CIs. The newly-true curve rises with popularity, while the long-true curve remains lower. This comparison concerns the entity holding the role, distinct from the person's popularity examined in Section~\ref{sec:analysis}.
+
+\paragraph{Logged examples.}
+Table~\ref{tab:examples} pairs questions with truncated responses and judge labels, sampled with a fixed seed. It illustrates cutoff-based denials, corrections based on stale evidence, and acceptance of a false premise. A label describes how the response treats the premise, not whether its other claims are accurate: the policy example defers while also inventing an earlier tenure.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_cutoff.pdf}
+\caption{Date probe by model and half-year. Dark lines: significant fitted steps (permutation $p<.05$); shaded bands: bootstrap 95\% CIs. The fitted dates depend on name-score normalisation.}
+\label{fig:cutoff}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_pop.pdf}
+\caption{Rebuttals by entity-popularity tertile under \textsc{Plain} (all models, primary judge). Error bars: 95\% item-bootstrap CIs. Newly-true and long-true premises show different trends.}
+\label{fig:pop}
+\end{figure}
+\input{tables/v3_large}
+\input{tables/v3_permodel}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_tradeoff.pdf}
+\caption{(a)~True- and false-premise rebuttals by condition (seven models, primary judge). The diagonal marks equal rates. (b)~Yes/no belief probes: per-model means (dots) and their average (bars).}
+\label{fig:tradeoff}
+\end{figure}
+\input{tables/v2_cutoffnorm}
+\input{tables/sweep}
+\input{tables/examples}

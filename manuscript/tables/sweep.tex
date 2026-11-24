@@ -1,0 +1,16 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{3.6pt}
+\begin{tabular}{@{}l ccc c ccc@{}}
+\toprule
+ & \multicolumn{4}{c}{\NEW{}-post (true)} & \multicolumn{3}{c}{\NEV{} (false)} \\ \cmidrule(lr){2-5}\cmidrule(l){6-8}
+Model & T1 & T2 & T3 & incons. & T1 & T2 & T3 \\
+\midrule
+Qwen2.5-0.5B & 10 & \hphantom{0}0 & 11 & 19 & 13 & \hphantom{0}0 & \hphantom{0}0 \\
+Qwen2.5-1.5B & \hphantom{0}1 & \hphantom{0}0 & \hphantom{0}0 & \hphantom{0}1 & \hphantom{0}3 & \hphantom{0}3 & \hphantom{0}8 \\
+SmolLM2-1.7B & 17 & \hphantom{0}1 & \hphantom{0}6 & 18 & 18 & \hphantom{0}5 & \hphantom{0}3 \\
+Qwen2.5-3B & 49 & 33 & 36 & 51 & 67 & 64 & 54 \\
+Phi-3.5-mini & 57 & 61 & 56 & 47 & 72 & 64 & 56 \\
+Qwen2.5-7B & 36 & 49 & 50 & 38 & 54 & 64 & 56 \\
+Mistral-7B-v0.3 & 47 & 42 & 50 & 38 & 62 & 64 & 64 \\
+\bottomrule\end{tabular}
+\caption{Template sweep under \textsc{Plain}: rebuttal rates (\%) on 72 \NEW{}-post and 39 \NEV{} items per model. Incons.: share of new truths rebutted under some templates but not others.}
+\label{tab:sweep}\end{table}

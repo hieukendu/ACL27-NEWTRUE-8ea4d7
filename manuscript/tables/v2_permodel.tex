@@ -1,0 +1,17 @@
+\begin{table*}[t]\centering\small\setlength\tabcolsep{3.4pt}
+\begin{tabular}{l ccc ccc ccc ccc ccc}
+\toprule
+ & \multicolumn{3}{c}{Plain} & \multicolumn{3}{c}{PC} & \multicolumn{3}{c}{RAG-f} & \multicolumn{3}{c}{RAG-s} & \multicolumn{3}{c}{Policy} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}\cmidrule(lr){14-16}
+Model & \NEW{} & \ANC{} & \OLD{} & \NEW{} & \ANC{} & \OLD{} & \NEW{} & \ANC{} & \OLD{} & \NEW{} & \ANC{} & \OLD{} & \NEW{} & \ANC{} & \OLD{} \\
+\midrule
+Qwen2.5-0.5B & 5 & 2 & 0 & 100 & 98 & 100 & 0 & 36$^{*}$ & 0 & 17 & 29 & 19 & 50 & 57 & 51 \\
+Qwen2.5-1.5B & 2 & 10 & 0 & 76 & 81 & 86 & 2 & 40$^{*}$ & 2 & 2 & 12 & 5 & 7 & 29$^{*}$ & 2 \\
+SmolLM2-1.7B & 10 & 24 & 2 & 64 & 52 & 58 & 0 & 17$^{*}$ & 0 & 0 & 14$^{*}$ & 0 & 10 & 29$^{*}$ & 9 \\
+Qwen2.5-3B & 38 & 67$^{*}$ & 21 & 100 & 100 & 98 & 2 & 90$^{*}$ & 0 & 79 & 86 & 2 & 19 & 17 & 7 \\
+Phi-3.5-mini & 76 & 76 & 14 & 31 & 40 & 2 & 0 & 48$^{*}$ & 0 & 64 & 64 & 0 & 7 & 7 & 2 \\
+Qwen2.5-7B & 55 & 76$^{*}$ & 19 & 79 & 69 & 37 & 0 & 100$^{*}$ & 2 & 100 & 95 & 0 & 36 & 55 & 9 \\
+Mistral-7B-v0.3 & 62 & 74 & 2 & 69 & 76 & 9 & 0 & 76$^{*}$ & 0 & 90 & 83 & 2 & 62 & 26$^{*}$ & 9 \\
+\bottomrule\end{tabular}
+\caption{Per-model rebuttal rates (\%, primary judge) of newly-true premises (\NEW{}, the 42 entities with a matched control), the matched long-false premises about the same entities (\ANC{}) and long-true premises (\OLD{}). $^{*}$: \NEW{} and \ANC{} differ by an exact McNemar test on the paired entities ($p<.05$, uncorrected). PC = Premise-check; RAG-f/-s = fresh (oracle) / stale evidence.}
+\label{tab:permodel2}\end{table*}

@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\footnotesize\setlength\tabcolsep{2.4pt}
+\begin{tabular}{@{}l c ccccc cc@{}}
+\toprule
+ & \multicolumn{6}{c}{assigned template} & \multicolumn{2}{c}{T2 only} \\ \cmidrule(lr){2-7}\cmidrule(l){8-9}
+Premise & $n$ & Plain & PC & Cut. & RAG-f & RAG-s & $n$ & Plain \\
+\midrule
+\NEW{}-post & 72 & 29 & 69 & 16 & \hphantom{0}1 & 47 & 24 & 29 \\
+\NEW{}-near & 55 & 27 & 68 & 11 & \hphantom{0}1 & 46 & 19 & 24 \\
+\OLD{} & 43 & \hphantom{0}8 & 56 & \hphantom{0}6 & \hphantom{0}1 & \hphantom{0}4 & 13 & 15 \\
+\midrule
+\STRE{} & 24 & 37 & 70 & 20 & 51 & \hphantom{0}4 & \hphantom{0}7 & 33 \\
+\STRL{} & 23 & 19 & 61 & 11 & 57 & \hphantom{0}4 & \hphantom{0}8 & 25 \\
+\STP{} & 76 & 17 & 61 & 10 & 53 & \hphantom{0}7 & 26 & 14 \\
+\NEV{} & 39 & 37 & 75 & 22 & 62 & 57 & 14 & 35 \\
+\bottomrule\end{tabular}
+\caption{Main-grid rebuttals (\%; seven models, primary judge). Top/bottom: true/false premises. Left/right: assigned templates/T2; see Section~\ref{sec:results} for definitions.}
+\label{tab:groups}\end{table}

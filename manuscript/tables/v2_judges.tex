@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{3pt}
+\begin{tabular}{l cccc}
+\toprule
+Rate (\%) & Haiku & Maj. & Qwen & Mistral \\
+\midrule
+Plain: rebut \NEW{}-post & 29 & 27 & 34 & 15 \\
+\quad rebut \OLD{} & 8 & 8 & 15 & 5 \\
+\quad rebut \STRE{} & 37 & 32 & 40 & 4 \\
+PC: rebut \NEW{}-post & 69 & 68 & 74 & 57 \\
+\quad rebut \OLD{} & 56 & 56 & 60 & 46 \\
+RAG-fresh: rebut \NEW{}-post & 1 & 1 & 15 & 0 \\
+RAG-stale: rebut \NEW{}-post & 47 & 45 & 51 & 34 \\
+Policy: rebut \NEW{}-post & 22 & 17 & 22 & 12 \\
+Plain: rebut \ANC{} (paired) & 47 & 43 & 52 & 12 \\
+\bottomrule\end{tabular}
+\caption{Headline rates (all models) under each judge and the 3-judge majority.}
+\label{tab:judges2}\end{table}

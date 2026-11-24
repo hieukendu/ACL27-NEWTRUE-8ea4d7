@@ -1,0 +1,22 @@
+\begin{table*}[t]\centering\small\setlength\tabcolsep{3.6pt}
+\begin{tabular}{l cccccc c ccc}
+\toprule
+ & \multicolumn{7}{c}{\textbf{Models with an identified cutoff} (4)} & \multicolumn{3}{c}{\textbf{All models} (7)} \\
+\cmidrule(lr){2-8}\cmidrule(lr){9-11}
+ & \multicolumn{2}{c}{rebut true ($\downarrow$)} & \multicolumn{2}{c}{rebut false ($\uparrow$)} & defer & \STP{} & & rebut & rebut & \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Condition & \NEW{}-post & \OLD{} & \NEV{} & \STR{} & \NEW{}-post & accept & $J_{\text{new}}$ & \NEW{}-post & \NEV{} & $J_{\text{new}}$ \\
+\midrule
+Plain & 50 {\scriptsize[42,58]} & 22 & 65 {\scriptsize[54,77]} & 51 & 10 & 55 & 15 & 34 & 42 & 8 \\
+\midrule
+Premise-check & 64 {\scriptsize[59,70]} & 43 & 72 {\scriptsize[64,81]} & 61 & 2 & 43 & 8 & 74 & 79 & 5 \\
+Date & 43 {\scriptsize[36,51]} & 21 & 56 {\scriptsize[46,66]} & 43 & 18 & 52 & 13 & 29 & 40 & 11 \\
+\midrule
+RAG-fresh & 9 {\scriptsize[5,14]} & 2 & 89 {\scriptsize[85,94]} & 78 & 52 & 4 & 80 & 15 & 65 & 50 \\
+RAG-stale & 79 {\scriptsize[74,84]} & 2 & 83 {\scriptsize[75,89]} & 4 & 18 & 42 & 4 & 50 & 55 & 5 \\
+\midrule
+Policy (ours) & 15 {\scriptsize[10,20]} & 8 & 37 {\scriptsize[27,48]} & 11 & 77 & 14 & 22 & 22 & 37 & 15 \\
+\quad -- no date & 16 {\scriptsize[10,22]} & 4 & 33 {\scriptsize[22,44]} & 12 & 70 & 24 & 17 & 20 & 33 & 13 \\
+\bottomrule\end{tabular}
+\caption{Response rates (\%) pooled over models, item-cluster bootstrap 95\% CIs in brackets. Left: the 4 models whose effective cutoff the date probe identifies (Mistral-7B-v0.3, Phi-3.5-mini, Qwen2.5-3B, Qwen2.5-7B); this subset is fixed by the probe alone (\S\ref{sec:cutoffs}). Right: all 7 models that ran every condition. \emph{Defer} = cannot verify. $J_{\text{new}}$ = rebut(\NEV{}) $-$ rebut(\NEW{}-post): how much more often a never-true premise is rebutted than a newly-true one (0 = no discrimination). Qwen2.5-7B judge.}
+\label{tab:pooled}\end{table*}

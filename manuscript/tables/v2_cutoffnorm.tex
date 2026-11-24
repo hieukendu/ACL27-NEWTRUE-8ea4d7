@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{4pt}
+\begin{tabular}{@{}l cr cr@{}}
+\toprule
+ & \multicolumn{2}{c}{summed log-prob} & \multicolumn{2}{c}{per-token} \\ \cmidrule(lr){2-3}\cmidrule(l){4-5}
+Model & step & $p$ & step & $p$ \\
+\midrule
+Qwen2.5-0.5B & 2021-06 & 0.433 & 2024-01 & 0.363 \\
+Qwen2.5-1.5B & 2025-06 & 0.856 & 2020-01 & 0.269 \\
+SmolLM2-1.7B & 2022-04 & 0.154 & 2019-11 & 0.318 \\
+Qwen2.5-3B & 2023-01 & 0.015 & 2020-01 & 0.005 \\
+Phi-3.5-mini & 2022-03 & 0.005 & 2022-01 & 0.005 \\
+Qwen3.5-4B & 2023-12 & 0.005 & 2023-12 & 0.005 \\
+Qwen2.5-7B & 2022-12 & 0.005 & 2021-07 & 0.005 \\
+Mistral-7B-v0.3 & 2021-05 & 0.005 & 2022-03 & 0.005 \\
+\bottomrule\end{tabular}
+\caption{Date-probe change points and permutation $p$-values under two name-scoring rules. \emph{Step} is the month when preference for the new holder drops. Normalisation changes the estimated dates.}
+\label{tab:cutoffnorm}\end{table}

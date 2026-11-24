@@ -1,0 +1,7 @@
+\section{Discussion}
+\label{sec:discussion}
+\paragraph{Deployment.}
+Instructions mostly shift how often small models rebut or defer. The difference between our two premise checks makes testing multiple wordings essential. A one-sentence cutoff reminder reduces false rebuttals in the small models largely by prompting deferrals, with no clear benefit from our longer policy. Its limited effect on the larger Qwen models cautions against assuming that the same reminder will work across model families and sizes. Fresh oracle evidence gives the clearest reduction in false rebuttals. The stale-snippet condition shows why evidence age matters: it induces rebuttals of about half the new truths. These controlled snippets do not measure a deployed retrieval system, and even fresh evidence leaves about half the answers deferring.
+
+\paragraph{Implications for premise benchmarks.}
+Following FreshQA's valid-premise columns \citep{vu2024freshllms}, premise-checking evaluations should report rebuttals of true premises alongside the catch rate (rebuttals of false premises), split true premises by whether they changed recently, and separate hedged from unhedged rebuttals.

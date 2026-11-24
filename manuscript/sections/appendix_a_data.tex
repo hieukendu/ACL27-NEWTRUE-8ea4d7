@@ -1,0 +1,39 @@
+\section{Benchmark Details}
+\label{app:data}
+Table~\ref{tab:data} counts audited items from the 2026-11-10 Wikidata and English Wikipedia snapshot. Columns are heads of government (P6) and state (P35), CEOs (P169), head coaches (P286) and chairpersons (P488). NEW-post changes begin in 2025; NEW-near covers July 2023--December 2024. The STALE rows distinguish replacements before 2021, in 2021--mid-2022, and predecessors of NEW-post holders. These groups span different histories, so their assigned-template rates should not be read as a single matched comparison.
+
+FORMER and SWAP supply the two false premises in each of the 35 entity triples. Their NEW premises reuse the corresponding NEW-post items and are not counted again. FORMER is a living holder whose last term ended before 2016; SWAP is another entity's holder appointed since 2025. The main grid uses assigned templates T1--T3, while the triples use present-tense T2.
+\begin{table}[t]\centering\small\setlength\tabcolsep{4.5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Condition & Gov. & State & CEO & Coach & Chair & All \\
+ & {\footnotesize P6} & {\footnotesize P35} & {\footnotesize P169} & {\footnotesize P286} & {\footnotesize P488} & \\
+\midrule
+NEW-post & \hphantom{0}23 & 15 & \hphantom{0}3 & 15 & 16 & \hphantom{0}72 \\
+NEW-near & \hphantom{0}14 & 16 & \hphantom{0}2 & 11 & 12 & \hphantom{0}55 \\
+OLD & \hphantom{00}6 & 12 & \hphantom{0}9 & \hphantom{0}6 & 10 & \hphantom{0}43 \\
+STALE$<$2021 & \hphantom{00}8 & \hphantom{0}6 & \hphantom{0}8 & \hphantom{0}0 & \hphantom{0}2 & \hphantom{0}24 \\
+STALE21-22 & \hphantom{00}2 & \hphantom{0}5 & \hphantom{0}4 & \hphantom{0}7 & \hphantom{0}5 & \hphantom{0}23 \\
+STALE-POST & \hphantom{0}23 & 16 & \hphantom{0}4 & 17 & 16 & \hphantom{0}76 \\
+NEVER & \hphantom{00}7 & \hphantom{0}8 & \hphantom{0}9 & \hphantom{0}8 & \hphantom{0}7 & \hphantom{0}39 \\
+\midrule
+FORMER & \hphantom{0}16 & \hphantom{0}7 & \hphantom{0}1 & \hphantom{0}4 & \hphantom{0}7 & \hphantom{0}35 \\
+SWAP & \hphantom{0}16 & \hphantom{0}7 & \hphantom{0}1 & \hphantom{0}4 & \hphantom{0}7 & \hphantom{0}35 \\
+\midrule
+All & 115 & 92 & 41 & 72 & 82 & 402 \\
+\bottomrule\end{tabular}
+\caption{Audited items by premise type and relation. The last two premise rows add false controls for 35 triples; their true NEW members are already counted in NEW-post.}\label{tab:data}\end{table}
+\paragraph{Audit.} After review, 18 items were removed (\texttt{data/exclusions.json}, with the deciding Wikipedia sentence in \texttt{results/audit/verdicts.json}): Sam Altman (NEW), Stephen J. Hemsley (NEW), Gerardo Seoane (NEW), Marius Șumudică (NEW), Asif Ali Zardari (NEW), Albulena Haxhiu (NEW), Donald Tusk (NEW), Geir Karlsen (OLD), Andrey Kondrashov (OLD), Sergio Ermotti (OLD), Greg Hayes (OLD), Christopher Scolese (OLD), Abdrabbuh Mansour Hadi (OLD), Elisabeth Blanik (OLD), Marc Solsona Aixalà (OLD), Jan Jambon (OLD), Tjapko Poppens (OLD), Wahidin Halim (OLD). Claude Haiku 5.5 flagged items whose gold truth contradicted its own knowledge; each flagged item was kept or removed after checking the person's current English Wikipedia article. NEW items whose holder had held the same role before (reinstatements) were removed using earlier Wikidata terms and the Wikipedia leads of flagged items. Every NEW holder's Wikipedia lead was also checked by rule for disambiguation pages, acting or interim holders and a missing entity name (\texttt{code/audit\_new.py}); a past-tense check of the lead was not implemented. OLD-0315 (Andrey Kondrashov, TASS) was removed in round three after a reviewer noted, and the TASS article confirmed, that he took office in July 2023. The excluded acting holder Albulena Haxhiu still appears as the SWAP person of one triple; the premise is false either way.
+Of 453 candidate items, 103 (23\%) failed the Wikipedia corroboration check and were dropped (per condition: NEW 30, STALE-POST 13, STALE-PRE 13, OLD 26, NEVER 21). 11 office labels failed the P39 consistency check and were replaced by the generic role phrase.
+\paragraph{Validation.}
+Entity popularity (Wikidata sitelinks) ranges from 25 to 428 (median 113).
+\paragraph{Examples.}\begin{itemize}\small
+\item Triple, NEW: \textit{Josh D'Amaro} as \textit{CEO of The Walt Disney Company} (change: 2026-01-01).
+\item Triple, FORMER: \textit{Michael Eisner} as \textit{CEO of The Walt Disney Company}.
+\item Triple, SWAP: \textit{Luca de Meo} as \textit{CEO of The Walt Disney Company}.
+\item STALE-POST: \textit{Sussan Ley} as \textit{chairperson of Liberal Party of Australia} (change: 2026-02-13).
+\item STALE21-22: \textit{Carlos Brito} as \textit{CEO of Anheuser-Busch InBev} (change: 2021-07-01).
+\item STALE<2021: \textit{Steve Easterbrook} as \textit{CEO of McDonald's} (change: 2019-11-01).
+\item OLD: \textit{Timotheus Höttges} as \textit{CEO of Deutsche Telekom}.
+\item NEVER: \textit{Vasant Narasimhan} as \textit{CEO of Vattenfall}.
+\end{itemize}

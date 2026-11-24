@@ -1,0 +1,22 @@
+\begin{table*}[p]\centering\small\setlength\tabcolsep{3.4pt}
+\begin{tabular}{l ccc c c c c}
+\toprule
+ & \multicolumn{2}{c}{rebut true} & \multicolumn{2}{c}{rebut false} & defer & \multicolumn{2}{c}{gaps (pts)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){7-8}
+Condition & \NEW{}-post & \OLD{} & \ANC{} (paired) & \STRE{} & \NEW{}-post & \NEW{}$-$\OLD{} & $J_{\text{anc}}$ \\
+\midrule
+Plain & 47 {\scriptsize[34,63]} & 14 & 73 & 60 & 14 & +33 {\scriptsize[14,53]} & +15 {\scriptsize[1,32]} \\
+\midrule
+Premise-check & 61 {\scriptsize[35,90]} & 37 & 71 & 61 & 2 & +24 {\scriptsize[6,44]} & +2 {\scriptsize[-11,14]} \\
+Date & 40 {\scriptsize[26,52]} & 17 & 61 & 48 & 25 & +23 {\scriptsize[9,36]} & +13 {\scriptsize[-1,27]} \\
+Cutoff-stated & 21 {\scriptsize[8,35]} & 8 & 48 & 30 & 56 & +14 {\scriptsize[3,26]} & +18 {\scriptsize[5,33]} \\
+\midrule
+RAG-fresh (oracle) & 1 {\scriptsize[0,2]} & 1 & 79 & 77 & 51 & 0 {\scriptsize[-3,2]} & +78 {\scriptsize[56,95]} \\
+RAG-mixed & 5 {\scriptsize[0,12]} & 0 & 80 & 51 & 36 & +5 {\scriptsize[0,12]} & +73 {\scriptsize[58,87]} \\
+RAG-stale & 77 {\scriptsize[60,93]} & 1 & 82 & 5 & 19 & +76 {\scriptsize[58,93]} & $-$1 {\scriptsize[-13,10]} \\
+\midrule
+Policy (ours) & 22 {\scriptsize[6,41]} & 7 & 26 & 20 & 74 & +15 {\scriptsize[1,32]} & $-$5 {\scriptsize[-26,18]} \\
+\quad -- no date & 20 {\scriptsize[4,38]} & 5 & 26 & 23 & 69 & +15 {\scriptsize[2,35]} & $-$1 {\scriptsize[-23,20]} \\
+\bottomrule\end{tabular}
+\caption{The 4 models whose date probe shows knowledge of office holders. Rebuttal and deferral rates (\%), primary judge (Claude Haiku 5.5). True premises: \NEW{}-post ($n{=}72$, became true on or after 2025-01-01, after every model's release) and \OLD{} ($n{=}43$, unchanged since 2022 or earlier). False premises: \ANC{} ($n{=}42$), a holder of the \emph{same} role at the \emph{same} entity who left before 2016, paired with its \NEW{}-post item; \STRE{} ($n{=}24$), a holder replaced before 2021. $J_{\text{anc}}$ = rebut(\ANC{}) $-$ rebut(paired \NEW{}-post): 0 means the model rebuts a newly-true premise as often as a long-false one about the same entity. 95\% CIs from a two-level bootstrap over models and items.}
+\label{tab:know}\end{table*}

@@ -1,0 +1,31 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{3pt}
+\begin{tabular}{lrc}
+\toprule
+Labellers compared & $n$ & $\kappa$ \\
+\midrule
+Qwen2.5-7B vs.\ Mistral-7B & 31{,}208 & 0.63 \\
+Qwen2.5-7B vs.\ Claude Haiku 5.5 & 31{,}208 & 0.78 \\
+Mistral-7B vs.\ Claude Haiku 5.5 & 31{,}208 & 0.68 \\
+Qwen2.5-7B vs.\ 3-judge majority & 31{,}208 & 0.85 \\
+Qwen2.5-7B vs.\ rules & 31{,}208 & 0.53 \\
+Claude Haiku 5.5 vs.\ rules & 31{,}208 & 0.56 \\
+\bottomrule\end{tabular}
+\vspace{4pt}
+\begin{tabular}{l cccc}
+\toprule
+Rate (\%) & Qwen & Mistral & Haiku & Maj. \\
+\midrule
+Plain: rebut \NEW{}-post & 50 & 26 & 47 & 43 \\
+\quad rebut \OLD{} & 22 & 8 & 14 & 14 \\
+\quad rebut \STR{} & 51 & 9 & 46 & 41 \\
+\quad rebut \NEV{} & 65 & 40 & 60 & 59 \\
+PC: rebut \NEW{}-post & 64 & 50 & 61 & 59 \\
+\quad rebut \OLD{} & 43 & 32 & 37 & 37 \\
+\quad rebut \NEV{} & 72 & 64 & 71 & 71 \\
+RAG-fresh: rebut \NEW{}-post & 9 & 0 & 1 & 1 \\
+RAG-stale: rebut \NEW{}-post & 79 & 49 & 75 & 74 \\
+Policy: rebut \NEW{}-post & 15 & 6 & 22 & 13 \\
+\quad defer \NEW{}-post & 77 & 85 & 74 & 80 \\
+\bottomrule\end{tabular}
+\caption{Top: agreement between labellers (Cohen's $\kappa$, three classes; refusals merged into \emph{cannot verify}). Bottom: headline rates for the models with an identified cutoff, recomputed under each judge and the 3-judge majority (Maj.). PC = Premise-check.}
+\label{tab:judge}\end{table}

@@ -1,0 +1,24 @@
+\begin{table*}[t]\centering\footnotesize\setlength\tabcolsep{6pt}
+\begin{tabular}{@{}l ccc c r@{\,}l l r@{\,}l l@{}}
+\toprule
+ & \multicolumn{3}{c}{rebut (\%)} & defer (\%) & \multicolumn{3}{c}{$J_{\text{fam}}$ = \ANC{} $-$ \NEW{}} & \multicolumn{3}{c}{$J_{\text{unf}}$ = \SWP{} $-$ \NEW{}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-5}\cmidrule(lr){6-8}\cmidrule(l){9-11}
+Condition & \NEW{} & \ANC{} & \SWP{} & \NEW{} & \multicolumn{2}{c}{pts [95\% CI]} & $p_{\text{model}}$ & \multicolumn{2}{c}{pts [95\% CI]} & $p_{\text{model}}$ \\
+\midrule
+Plain & 30 & 41 & 40 & 42 & +11 & {\footnotesize[1,23]} & .04 & +10 & {\footnotesize[2,22]} & .03 \\
+\midrule
+Premise-check (ours) & 62 & 75 & 75 & \hphantom{0}7 & +13 & {\footnotesize[0,27]} & .06 & +13 & {\footnotesize[0,29]} & .12 \\
+Premise-check (FreshQA) & 29 & 44 & 49 & 18 & +15 & {\footnotesize[4,28]} & .01 & +20 & {\footnotesize[9,33]} & .003 \\
+\midrule
+Date & 24 & 33 & 36 & 47 & +10 & {\footnotesize[0,20]} & .05 & +12 & {\footnotesize[2,24]} & .03 \\
+Cutoff-stated & 11 & 23 & 19 & 64 & +12 & {\footnotesize[2,24]} & .05 & +8 & {\footnotesize[0,19]} & .08 \\
+Policy (ours) & 20 & 26 & 29 & 58 & +6 & {\footnotesize[$-$6,17]} & .17 & +10 & {\footnotesize[0,20]} & .03 \\
+\quad -- no date & 23 & 20 & 33 & 58 & $-$4 & {\footnotesize[$-$18,9]} & .55 & +9 & {\footnotesize[$-$1,21]} & .07 \\
+\midrule
+RAG-fresh (oracle) & \hphantom{0}0 & 50 & 50 & 51 & +50 & {\footnotesize[20,83]} & .03 & +50 & {\footnotesize[17,83]} & .03 \\
+\quad + premise-check & 39 & 89 & 88 & 15 & +50 & {\footnotesize[23,78]} & .02 & +49 & {\footnotesize[20,76]} & .02 \\
+RAG-mixed & \hphantom{0}4 & 62 & 60 & 40 & +58 & {\footnotesize[26,84]} & .01 & +56 & {\footnotesize[29,84]} & .008 \\
+RAG-stale & 48 & 54 & 55 & 44 & +6 & {\footnotesize[$-$3,18]} & .20 & +7 & {\footnotesize[$-$3,18]} & .13 \\
+\bottomrule\end{tabular}
+\caption{Matched-triple results (35 triples, 7 models, primary judge). $J$: false-minus-true rebuttal margin in percentage points; defer: cannot verify. CIs resample models and entities. Model-level $p$-values are uncorrected; none of the 22 tests survives Holm correction.}
+\label{tab:main}\end{table*}

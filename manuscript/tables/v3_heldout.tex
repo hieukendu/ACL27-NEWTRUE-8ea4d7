@@ -1,0 +1,20 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{4pt}
+\begin{tabular}{@{}l ccc@{}}
+\toprule
+Comparison & $n$ & acc. & $\kappa$ \\
+\midrule
+Sonnet 5.5 vs.\ gpt-5.3-codex & 2204 & 0.95 & 0.92 \\
+\midrule
+Haiku 5.5 vs.\ consensus & 2090 & 0.94 & 0.91 \\
+3-judge majority vs.\ consensus & 2090 & 0.95 & 0.92 \\
+Qwen2.5-7B vs.\ consensus & 2090 & 0.91 & 0.86 \\
+Mistral-7B vs.\ consensus & 2090 & 0.84 & 0.76 \\
+\midrule
+Haiku vs.\ Sonnet (all) & 2204 & 0.91 & 0.86 \\
+Haiku vs.\ gpt-5.3-codex (all) & 2205 & 0.92 & 0.88 \\
+RAG-f+PC: Sonnet vs.\ codex & \hphantom{0}734 & 0.93 & 0.85 \\
+RAG-f+PC: Haiku vs.\ Sonnet & \hphantom{0}734 & 0.90 & 0.77 \\
+RAG-f+PC: Haiku vs.\ codex & \hphantom{0}735 & 0.87 & 0.71 \\
+\bottomrule\end{tabular}
+\caption{Held-out label agreement on entity triples. Consensus uses only responses where both held-out labellers agree; \emph{All} uses every available label. The last three rows assess \textsc{RAG-fresh+PC}.}
+\label{tab:heldout}\end{table}

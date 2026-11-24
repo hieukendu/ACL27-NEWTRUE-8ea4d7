@@ -1,0 +1,14 @@
+\section{Experimental Setup}
+\label{sec:setup}
+
+\paragraph{Models.}
+We evaluate seven open instruction-tuned models from four developers, all publicly released in 2024: Qwen2.5 at 0.5B, 1.5B, 3B and 7B parameters \citep{qwen2025qwen25}, SmolLM2-1.7B \citep{allal2025smollm2}, Phi-3.5-mini (3.8B; \citealp{abdin2024phi3}) and Mistral-7B-Instruct-v0.3. Every \NEW{}-post premise therefore became true after the model's release, whatever its exact training cutoff. Qwen3.5-4B, a 2026 successor of Qwen3 \citep{yang2025qwen3}, ran only three conditions on the main grid with thinking disabled (its linear-attention layers have no optimised kernels on our hardware); it is reported in Appendix~\ref{app:extra} and never pooled. Llama-3.1-8B-Instruct \citep{grattafiori2024llama3} was planned, but its weights were not available. We run all seven models locally in bfloat16 precision on one Apple-silicon GPU, using greedy decoding and a cap of 48 new tokens; a 256-token re-run of the triples checks this cap (\S\ref{sec:analysis}). Three larger 2024 models (Qwen2.5-14B and -32B, Phi-4) ran the same prompts on a second machine (NVIDIA GB10) and are reported separately.
+
+\paragraph{Data.}
+After validation and the audit, the main grid has \WNGNew{} \NEW{}-post, \WNGNear{} \NEW{}-near, \WNGOld{} \OLD{}, \WNGStre{} \STRE{}, \WNGStrl{} \STRL{}, \WNGStp{} \STP{} and \WNGNev{} \NEV{} items, each asked with its assigned template; the main test adds \WNTri{} entity triples (Appendix~\ref{app:data}). The seven models answer every item under every condition. A template sweep asks every main-grid item with all three templates under \textsc{Plain}.
+
+\paragraph{Statistics.}
+Pooled rates average over models and items, with 95\% CIs from a two-level bootstrap that resamples models and, independently, items or entities (2{,}000 resamples; \citealp{efron1993bootstrap}). To avoid treating responses from the same model as independent evidence, we also test each pooled contrast with a one-sample $t$-test and a Wilcoxon signed-rank test on the seven per-model differences ($p_t$, $p_W$; with seven models the smallest attainable $p_W$ is .016, or .0625 when two differences are zero). We report Holm-adjusted $p$ \citep{holm1979} where we draw conclusions from several tests. Differences between conditions are paired on items and models. Decoding is greedy, so there is no sampling seed; robustness checks vary the template, the judge and the output length.
+
+\paragraph{API use.}
+We use APIs for annotation, not to generate the evaluated responses. Claude Haiku 5.5 labels all responses and flags audit candidates (\WHaikuCost{} USD); Claude Sonnet 5.5 produced the first validation sample and the held-out labels (\WSonnetCost{} USD); OpenAI gpt-5.3-codex also labelled the held-out set (\WCodexIn{}M input and \WCodexOut{}M output tokens; costs from our usage logs).

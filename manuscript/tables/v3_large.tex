@@ -1,0 +1,22 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{4pt}
+\begin{tabular}{@{}l ccc c@{}}
+\toprule
+ & Qwen2.5 & Phi-4 & Qwen2.5 & Pooled \\
+Rebuttals (\%) & 14B & 14B & 32B & (3) \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Plain, main grid}} \\
+\quad \NEW{}-post & \hphantom{0}50 & 25 & \hphantom{0}49 & 41 \\
+\quad \OLD{} & \hphantom{00}5 & \hphantom{0}2 & \hphantom{00}2 & \hphantom{0}3 \\
+\multicolumn{5}{@{}l}{\textit{Plain, entity triples}} \\
+\quad \NEW{} (true) & \hphantom{0}69 & 31 & \hphantom{0}60 & 53 \\
+\quad \ANC{} & \hphantom{0}86 & 51 & \hphantom{0}80 & 72 \\
+\quad \SWP{} & \hphantom{0}83 & 54 & \hphantom{0}77 & 71 \\
+\multicolumn{5}{@{}l}{\textit{rebut \NEW{}, entity triples}} \\
+\quad Premise-check & \hphantom{0}91 & 94 & 100 & 95 \\
+\quad Cutoff-stated & \hphantom{0}63 & \hphantom{0}6 & \hphantom{0}51 & 40 \\
+\quad RAG-fresh & \hphantom{00}6 & \hphantom{0}0 & \hphantom{00}0 & \hphantom{0}2 \\
+\quad RAG-fresh+PC & \hphantom{0}34 & 20 & \hphantom{0}20 & 25 \\
+\quad RAG-stale & 100 & 86 & 100 & 95 \\
+\bottomrule\end{tabular}
+\caption{Rebuttal rates (\%) for three larger models, scored by the primary judge. Prompts and greedy decoding match the small-model study; these models are pooled separately.}
+\label{tab:large}\end{table}

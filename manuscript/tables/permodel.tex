@@ -1,0 +1,18 @@
+\begin{table*}[t]\centering\small\setlength\tabcolsep{3.2pt}
+\begin{tabular}{l c cc cc cc cc cc}
+\toprule
+ & est. & \multicolumn{2}{c}{Plain} & \multicolumn{2}{c}{Premise-check} & \multicolumn{2}{c}{RAG-fresh} & \multicolumn{2}{c}{RAG-stale} & \multicolumn{2}{c}{Policy} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12}
+Model & cutoff & FRR$\downarrow$ & catch$\uparrow$ & FRR$\downarrow$ & catch$\uparrow$ & FRR$\downarrow$ & catch$\uparrow$ & FRR$\downarrow$ & catch$\uparrow$ & FRR$\downarrow$ & catch$\uparrow$ \\
+\midrule
+Qwen2.5-0.5B & n.i. & 18 & 15 & 100$^{*}$ & 100$^{*}$ & 24 & 38 & 18 & 28 & 58$^{*}$ & 79$^{*}$ \\
+Qwen2.5-1.5B & n.i. & 1 & 5 & 90$^{*}$ & 85$^{*}$ & 31$^{*}$ & 46 & 7 & 8 & 7 & 5 \\
+SmolLM2-1.7B & n.i. & 15 & 10 & 72$^{*}$ & 77$^{*}$ & 14 & 15 & 11 & 21 & 25 & 26 \\
+Qwen2.5-3B & 2023-01 & 40 & 67 & 100$^{*}$ & 100$^{*}$ & 6$^{*}$ & 92 & 78$^{*}$ & 79 & 18 & 44 \\
+Phi-3.5-mini & 2022-03 & 62 & 69 & 25$^{*}$ & 44 & 1$^{*}$ & 67 & 53 & 64 & 3$^{*}$ & 15$^{*}$ \\
+Qwen3.5-4B & 2023-12 & 67 & 77 & 100$^{*}$ & 100 & -- & -- & -- & -- & 26$^{*}$ & 46 \\
+Qwen2.5-7B & 2022-12 & 46 & 62 & 68 & 72 & 14$^{*}$ & 100$^{*}$ & 97$^{*}$ & 97 & 17$^{*}$ & 49 \\
+Mistral-7B-v0.3 & 2021-05 & 53 & 64 & 64 & 74 & 15$^{*}$ & 97$^{*}$ & 88$^{*}$ & 90 & 24$^{*}$ & 41 \\
+\bottomrule\end{tabular}
+\caption{Per-model false-rebuttal rate on \NEW{}-post true premises (FRR, $n{=}72$ items) and catch rate on \NEV{} false premises ($n{=}39$), in \%. $^{*}$: differs from \textsc{Plain} by an exact McNemar test, Holm-corrected over all 264 tests ($p<.05$). Est.\ cutoff: change point of the date probe (\S\ref{sec:cutoffs}); n.i.\ = not identifiable (permutation $p\ge.05$ or no downward step). --: condition not run.}
+\label{tab:permodel}\end{table*}

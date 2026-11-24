@@ -1,0 +1,25 @@
+\begin{table*}[t]\centering\footnotesize\setlength\tabcolsep{4.4pt}
+\begin{tabular}{@{}l cc ccc r@{\,}l l r@{\,}l l@{}}
+\toprule
+ & & & \multicolumn{3}{c}{rebut (\%)} & \multicolumn{3}{c}{$J_{\text{fam}}$ (pts)} & \multicolumn{3}{c}{$J_{\text{unf}}$ (pts)} \\
+\cmidrule(lr){4-6}\cmidrule(lr){7-9}\cmidrule(l){10-12}
+\textsc{Plain}, entity triples & models & triples & \NEW{} & \ANC{} & \SWP{} & \multicolumn{2}{c}{pts [95\% CI]} & $p_{t}$ & \multicolumn{2}{c}{pts [95\% CI]} & $p_{t}$ \\
+\midrule
+Primary analysis & 7 & 35 & 30 & 41 & 40 & +11 & {\footnotesize[1,23]} & .04 & +10 & {\footnotesize[2,22]} & .03 \\
+Four knowledgeable models & 4 & 35 & 52 & 69 & 69 & +17 & {\footnotesize[1,34]} & .05 & +16 & {\footnotesize[3,30]} & .01 \\
+\quad same models, 256 tokens & 4 & 35 & 55 & 70 & 72 & +15 & {\footnotesize[1,30]} & .03 & +17 & {\footnotesize[3,33]} & .03 \\
+\midrule
+Unhedged rebuttals only & 7 & 35 & \hphantom{0}5 & 18 & \hphantom{0}8 & +12 & {\footnotesize[2,27]} & .08 & +2 & {\footnotesize[$-$4,10]} & .44 \\
+Hedged rebuttals only & 7 & 35 & 24 & 23 & 32 & $-$1 & {\footnotesize[$-$12,9]} & .72 & +8 & {\footnotesize[$-$2,20]} & .12 \\
+\midrule
+\SWP{} no more popular than \NEW{} & 7 & 23 & 29 & 39 & 35 & +10 & {\footnotesize[$-$1,24]} & .05 & +7 & {\footnotesize[$-$2,19]} & .01 \\
+\SWP{} nationality-compatible & 7 & \hphantom{0}4 & 21 & 36 & 29 & +14 & {\footnotesize[$-$14,43]} & .10 & +7 & {\footnotesize[$-$14,29]} & .36 \\
+\SWP{} not nationality-compatible & 7 & 31 & 31 & 41 & 41 & +11 & {\footnotesize[0,23]} & .05 & +11 & {\footnotesize[0,22]} & .04 \\
+\midrule
+Held-out labeller: Sonnet 5.5 & 7 & 35 & 31 & 42 & 38 & +11 & {\footnotesize[1,26]} & .06 & +7 & {\footnotesize[$-$3,20]} & .13 \\
+Held-out labeller: gpt-5.3-codex & 7 & 35 & 30 & 41 & 39 & +11 & {\footnotesize[1,24]} & .06 & +9 & {\footnotesize[0,20]} & .06 \\
+\midrule
+Larger models (14--32B) & 3 & 35 & 53 & 72 & 71 & +19 & {\footnotesize[6,33]} & -- & +18 & {\footnotesize[7,32]} & -- \\
+\bottomrule\end{tabular}
+\caption{Robustness of the \textsc{Plain} margins (primary judge unless stated). Hedged and unhedged rows partition rebuttals; popularity and nationality rows restrict the controls. CIs resample models and entities; $p_t$ tests per-model margins. Section~\ref{sec:analysis} defines the checks.}
+\label{tab:robust}\end{table*}

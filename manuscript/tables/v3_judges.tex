@@ -1,0 +1,23 @@
+\begin{table}[t]\centering\small\setlength\tabcolsep{3.1pt}
+\begin{tabular}{@{}l r rrr rr@{}}
+\toprule
+ & \multicolumn{1}{c}{primary} & \multicolumn{3}{c}{other judges} & \multicolumn{2}{c}{held-out} \\ \cmidrule(lr){2-2}\cmidrule(lr){3-5}\cmidrule(l){6-7}
+ & Haiku & Maj. & Qwen & Mistral & Sonnet & codex \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{rebut under Plain (\%)}} \\
+\quad \NEW{} & 30 & 30 & 33 & 23 & 31 & 30 \\
+\quad \ANC{} & 41 & 40 & 45 & 20 & 42 & 41 \\
+\quad \SWP{} & 40 & 39 & 41 & 33 & 38 & 39 \\
+\multicolumn{7}{@{}l}{\textit{$J_{\text{fam}}$ (pts)}} \\
+\quad Plain & +11 & +11 & +12 & $-$2 & +11 & +11 \\
+\quad PC & +13 & +10 & +11 & +8 & +9 & +10 \\
+\quad Cutoff & +12 & +12 & +13 & +4 & +16 & +16 \\
+\multicolumn{7}{@{}l}{\textit{$J_{\text{unf}}$ (pts)}} \\
+\quad Plain & +10 & +9 & +9 & +10 & +7 & +9 \\
+\quad PC & +13 & +12 & +12 & +10 & +10 & +12 \\
+\quad Cutoff & +8 & +7 & +9 & +7 & +7 & +7 \\
+\multicolumn{7}{@{}l}{\textit{rebut under RAG-f+PC (\%)}} \\
+\quad \NEW{} & 39 & 40 & 54 & 37 & 27 & 28 \\
+\bottomrule\end{tabular}
+\caption{Entity-triple results under each labeller (seven models, same responses). Maj.: majority vote; PC: our premise check. The text defines the remaining abbreviations.}
+\label{tab:judges3}\end{table}

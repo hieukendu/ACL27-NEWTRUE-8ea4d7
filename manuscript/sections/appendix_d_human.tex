@@ -1,0 +1,12 @@
+\section{Planned Human Validation}
+\label{app:human}
+\pending{No human annotation has been collected for this submission. All labels in the paper are automatic. This appendix specifies the protocol we will run.}
+
+\paragraph{Item validity.}
+Two annotators will independently check a stratified random sample of 150 items (30 per condition, balanced across relations) against news sources dated on or before the snapshot date (2026-11-10). For each item they record whether the presupposition is true on the snapshot date and, for \NEW{} items, whether the change date is correct to the month. We will report the item error rate per condition with Wilson 95\% intervals. An item error rate above 5\% in any condition triggers a re-run with the corrected subset.
+
+\paragraph{Response labels.}
+Three annotators will label a stratified sample of 600 responses (balanced over model, condition and item type, and over-sampling disagreements between the two LLM judges at 2:1) with the same three-way scheme the judges use. The instructions are the judge prompt (Appendix~\ref{app:prompts}) plus ten worked examples, two of them borderline (``as of my last update, $Z$ was CEO; I have no information about $x$''). Annotators see the question, the explicit presupposition and the response, but not the model name, the condition or the item type. We will report Krippendorff's $\alpha$ among humans, per-class precision and recall of each judge against the human majority, and the headline metrics (false-rebuttal rate on \NEW{}-post, catch rate on knowable-false items) recomputed on the human labels with bootstrap CIs.
+
+\paragraph{Compensation and ethics.}
+Annotators will be paid at least the local living wage, with an expected 2.5 hours of work each, and may withdraw at any time. The items concern public office holders and contain no private individuals.

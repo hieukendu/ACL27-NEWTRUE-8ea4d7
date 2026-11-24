@@ -1,0 +1,85 @@
+{"key": ["qwen2.5-0.5b", "P3N-0002", "premise_ragf", "T2"], "raw": "The answer opens by calling"}
+{"key": ["phi3.5-mini", "P3N-0002", "premise_ragf", "T2"], "raw": "The answer starts by saying"}
+{"key": ["qwen2.5-1.5b", "P3N-0006", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["qwen2.5-0.5b", "P3N-0008", "premise_ragf", "T2"], "raw": "The answer begins by calling"}
+{"key": ["qwen2.5-1.5b", "P3N-0008", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["qwen2.5-1.5b", "P3N-0012", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["phi3.5-mini", "P3N-0012", "premise_ragf", "T2"], "raw": "The answer explicitly says"}
+{"key": ["qwen2.5-0.5b", "P3N-0014", "premise_ragf", "T2"], "raw": "The answer opens by saying"}
+{"key": ["qwen2.5-1.5b", "P3N-0014", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["qwen2.5-0.5b", "P3A-0014", "premise_ragf", "T2"], "raw": "The answer explicitly states"}
+{"key": ["qwen2.5-1.5b", "P3N-0018", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["phi3.5-mini", "P3N-0018", "premise_ragf", "T2"], "raw": "The answer says the question has no"}
+{"key": ["qwen2.5-1.5b", "P3N-0020", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["qwen2.5-7b", "P3N-0020", "premise_ragf", "T2"], "raw": "The answer begins by ackn"}
+{"key": ["qwen2.5-1.5b", "P3N-0022", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["qwen2.5-0.5b", "P3A-0022", "premise_ragf", "T2"], "raw": "The answer begins by calling"}
+{"key": ["phi3.5-mini", "P3N-0023", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["qwen2.5-0.5b", "P3N-0025", "premise_ragf", "T2"], "raw": "The answer opens by saying"}
+{"key": ["phi3.5-mini", "P3N-0025", "premise_ragf", "T2"], "raw": "The answer says the question has no"}
+{"key": ["qwen2.5-1.5b", "P3N-0028", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["qwen2.5-7b", "P3N-0028", "premise_ragf", "T2"], "raw": "The answer repeats the cla"}
+{"key": ["qwen2.5-1.5b", "P3N-0031", "premise_ragf", "T2"], "raw": "The answer opens by calling"}
+{"key": ["qwen2.5-7b", "P3N-0031", "premise_ragf", "T2"], "raw": "The answer begins by repe"}
+{"key": ["mistral-7b", "P3N-0031", "premise_ragf", "T2"], "raw": "The answer states that Kei"}
+{"key": ["qwen2.5-0.5b", "P3A-0031", "premise_ragf", "T2"], "raw": "The answer is incoherent"}
+{"key": ["qwen2.5-1.5b", "P3N-0034", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["mistral-7b", "P3N-0034", "premise_ragf", "T2"], "raw": "The answer first notes the ev"}
+{"key": ["qwen2.5-1.5b", "P3N-0038", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["phi3.5-mini", "P3N-0038", "premise_ragf", "T2"], "raw": "The answer says the question has no"}
+{"key": ["qwen2.5-7b", "P3N-0038", "premise_ragf", "T2"], "raw": "The answer begins by affir"}
+{"key": ["qwen2.5-1.5b", "P3N-0039", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["phi3.5-mini", "P3N-0039", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["qwen2.5-0.5b", "P3N-0042", "premise_ragf", "T2"], "raw": "The answer says \"The question cont"}
+{"key": ["qwen2.5-1.5b", "P3N-0042", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["qwen2.5-0.5b", "P3A-0042", "premise_ragf", "T2"], "raw": "The answer is internally confused"}
+{"key": ["qwen2.5-1.5b", "P3N-0044", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["phi3.5-mini", "P3N-0044", "premise_ragf", "T2"], "raw": "The answer says the question has no"}
+{"key": ["mistral-7b", "P3A-0044", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["qwen2.5-1.5b", "P3N-0049", "premise_ragf", "T2"], "raw": "The answer opens by calling"}
+{"key": ["phi3.5-mini", "P3N-0049", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["mistral-7b", "P3N-0049", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["qwen2.5-1.5b", "P3N-0050", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["phi3.5-mini", "P3N-0050", "premise_ragf", "T2"], "raw": "The answer first says the question has"}
+{"key": ["qwen2.5-1.5b", "P3N-0052", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["phi3.5-mini", "P3N-0052", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["qwen2.5-1.5b", "P3N-0053", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["qwen2.5-1.5b", "P3N-0054", "premise_ragf", "T2"], "raw": "The answer's first sentence"}
+{"key": ["phi3.5-mini", "P3N-0054", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["qwen2.5-0.5b", "P3N-0055", "premise_ragf", "T2"], "raw": "The answer says \"The question cont"}
+{"key": ["qwen2.5-1.5b", "P3N-0056", "premise_ragf", "T2"], "raw": "The answer says the question has a"}
+{"key": ["phi3.5-mini", "P3N-0056", "premise_ragf", "T2"], "raw": "The answer opens by clai"}
+{"key": ["qwen2.5-0.5b", "P3A-0056", "premise_ragf", "T2"], "raw": "The answer opens by calling"}
+{"key": ["smollm2-1.7b", "P3A-0056", "premise_ragf", "T2"], "raw": "The answer is self-contrad"}
+{"key": ["qwen2.5-1.5b", "P3N-0060", "premise_ragf", "T2"], "raw": "The answer says the question has a"}
+{"key": ["qwen2.5-3b", "P3N-0060", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["phi3.5-mini", "P3N-0063", "premise_ragf", "T2"], "raw": "The answer says the question \"does"}
+{"key": ["qwen2.5-0.5b", "P3A-0063", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["qwen2.5-1.5b", "P3N-0064", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["qwen2.5-7b", "P3N-0064", "premise_ragf", "T2"], "raw": "The answer begins by citing"}
+{"key": ["qwen2.5-0.5b", "P3N-0065", "premise_ragf", "T2"], "raw": "The answer opens by clai"}
+{"key": ["qwen2.5-1.5b", "P3N-0065", "premise_ragf", "T2"], "raw": "The answer claims the question has"}
+{"key": ["qwen2.5-3b", "P3N-0065", "premise_ragf", "T2"], "raw": "The answer first says the premise"}
+{"key": ["qwen2.5-0.5b", "P3N-0066", "premise_ragf", "T2"], "raw": "The answer says \"The question cont"}
+{"key": ["qwen2.5-1.5b", "P3N-0066", "premise_ragf", "T2"], "raw": "The answer calls the premise"}
+{"key": ["phi3.5-mini", "P3N-0066", "premise_ragf", "T2"], "raw": "The answer first says the question has"}
+{"key": ["qwen2.5-1.5b", "P3N-0067", "premise_ragf", "T2"], "raw": "The answer calls the question's"}
+{"key": ["phi3.5-mini", "P3N-0067", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["qwen2.5-1.5b", "P3N-0068", "premise_ragf", "T2"], "raw": "The answer says \"the question cont"}
+{"key": ["phi3.5-mini", "P3N-0068", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["qwen2.5-7b", "P3N-0068", "premise_ragf", "T2"], "raw": "The answer starts by affir"}
+{"key": ["phi3.5-mini", "P3N-0069", "premise_ragf", "T2"], "raw": "The answer starts by saying"}
+{"key": ["qwen2.5-1.5b", "P3N-0070", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["mistral-7b", "P3N-0070", "premise_ragf", "T2"], "raw": "The answer says the question does not"}
+{"key": ["qwen2.5-1.5b", "P3N-0071", "premise_ragf", "T2"], "raw": "The answer says the question \"cont"}
+{"key": ["qwen2.5-7b", "P3N-0071", "premise_ragf", "T2"], "raw": "The answer states that Koja"}
+{"key": ["qwen2.5-0.5b", "P3A-0071", "premise_ragf", "T2"], "raw": "The answer opens by saying"}
+{"key": ["qwen2.5-0.5b", "P3S-0006", "premise_ragf", "T2"], "raw": "The answer opens by decla"}
+{"key": ["mistral-7b", "P3S-0006", "premise_ragf", "T2"], "raw": "The answer begins by saying"}
+{"key": ["qwen2.5-0.5b", "P3S-0022", "premise_ragf", "T2"], "raw": "The answer is self-contrad"}
+{"key": ["qwen2.5-0.5b", "P3S-0031", "premise_ragf", "T2"], "raw": "The answer is internally contrad"}
+{"key": ["qwen2.5-3b", "P3S-0054", "premise_ragf", "T2"], "raw": "The answer opens by saying"}
+{"key": ["mistral-7b", "P3S-0063", "premise_ragf", "T2"], "raw": "The answer says the question contains"}
+{"key": ["qwen2.5-0.5b", "P3S-0065", "premise_ragf", "T2"], "raw": "The answer is internally contrad"}
+{"key": ["qwen2.5-0.5b", "P3S-0053", "plain", "T2"], "raw": "Larry Rhoden is actually the Governor of South Dakota, not a Prime Minister of M"}
+{"key": ["smollm2-1.7b", "P3A-0056", "premise_ragf", "T2"], "raw": "The answer starts by saying the question has no false premise and that Ayrault i"}

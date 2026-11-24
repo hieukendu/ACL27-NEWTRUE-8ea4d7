@@ -1,0 +1,8 @@
+# LaTeX build intermediates: regenerated on every build, contain local paths, not released
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.blg
+*.out
+*.synctex.gz

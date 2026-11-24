@@ -1,0 +1,18 @@
+\section*{Limitations}
+\paragraph{Scale and scope.}
+Our sample is small: \WNGNew{} newly-true items and \WNTri{} entity triples, so per-model rates carry wide CIs, and seven models (of which three rebut almost nothing without instructions) give model-level tests little power. None of the margin tests in Table~\ref{tab:main} survives correction over all conditions. We cover five relations about office holders, in English. The main analysis uses seven models of at most 7B parameters released in 2024; three larger 2024 models (14--32B) are reported separately and are too few for a size trend. Frontier and reasoning models, and other domains (renamed entities, records, products), are not tested. Llama-3.1-8B could not be run, and Qwen3.5-4B ran only three conditions on the main grid.
+
+\paragraph{Ground truth.}
+Item truth comes from Wikidata, corroborated against English Wikipedia and audited by LLM flagging, a rule-based check of every newly-true holder's Wikipedia lead, and reviewer reports; the audit removed \VNExcl{} items. Residual errors are likely, for example long-true holders that no check flagged. Former holders are the most recent ones recorded in the Wikidata dump, which is incomplete for some roles (e.g.\ Rice rather than Clinton for the State Department, Ranieri rather than Donadoni at Parma), and interim former holders are treated inconsistently. \WJanTri{} of the newly-true triple items carry a change date of 1 January that may be year-precision in Wikidata, so the oracle snippet can state a wrong day (e.g.\ Disney's CEO, who took office during 2026). The generic role phrases used when Wikidata has no office label (``chairperson of $y$'') may themselves invite objections. The items have not undergone human validation; Appendix~\ref{app:human} specifies the pending protocol.
+
+\paragraph{Controls.}
+The swapped control is matched to the newly-true holder only in median popularity and mostly crosses countries, so it confounds unfamiliarity with surface implausibility; a within-country, popularity-matched control is left for future work. The main-grid false groups use templates that are historically true of a replaced holder; on the present-tense template alone these groups are small.
+
+\paragraph{Labels.}
+Every label is automatic. The primary judge, Claude Haiku 5.5, is a closed API model whose behaviour may change across versions. The held-out labels come from Claude Sonnet~5.5, of the same family, and gpt-5.3-codex; they cover four of eleven conditions on the triples. The main grid has only the initial validation sample of \VSilN{} responses. The boundary between \emph{rebut} and \emph{cannot verify} is graded: hedged denials count as rebuttals, our hedged/unhedged split uses a regular expression, and \emph{cannot verify} also absorbs political refusals and answers that accept the premise but lack details.
+
+\paragraph{Decoding and wording.}
+We use greedy decoding, which on our GPU is not bit-reproducible across batch shapes, and answers are sensitive to the question template.
+
+\paragraph{Mechanism.}
+We do not establish why models rebut newly-true premises. Entity popularity predicts the error, which is consistent with stored knowledge of the previous holder, but a yes/no probe of that knowledge did not predict rebuttals, and we have no interpretability evidence. Our effective-cutoff estimates are descriptive.

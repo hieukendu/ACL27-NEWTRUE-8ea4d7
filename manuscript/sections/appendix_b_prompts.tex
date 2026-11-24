@@ -1,0 +1,35 @@
+\section{Prompts}
+\label{app:prompts}
+We apply each model's chat template and use greedy decoding with a 48-token output cap, except in the explicitly reported 256-token checks. Qwen3.5 runs with thinking disabled.
+\paragraph{Question templates.} The placeholders are \texttt{x} (the presupposed holder), \texttt{role} (the role phrase, e.g.\ ``CEO of Y'' or an office label such as ``Prime Minister of Canada'') and \texttt{y} (the organisation).
+\begin{itemize}
+\item \textbf{T1}: \textit{What has [x] done since becoming [role]?}
+\item \textbf{T2}: \textit{What are the main priorities of [x] as the current [role]?}
+\item \textbf{T3}: \textit{How has [y] changed under [x]'s leadership as [role]?}
+\end{itemize}
+\paragraph{Interventions.}\begin{itemize}
+\item \textsc{Plain}: the question alone.
+\item \textsc{Premise-check}: this instruction, written in the style of FreshQA's false-premise instruction, is appended to the user turn: \textit{Before answering, check whether the question contains a false premise. If it does, point it out and correct it; otherwise answer the question.}
+\item \textsc{Date} (system message): \textit{Today's date is November 10, 2026.}
+\item \textsc{RAG-fresh} (oracle; prefix to the user turn): \textit{Retrieved evidence (Wikidata, retrieved November 10, 2026): [current holder] has been [role] since [date].} followed by \textit{Question: [question]}.
+\item \textsc{Cutoff-stated} (system message): \textit{Today's date is November 10, 2026. Your training data ends before 2025, so you do not know about events after that.}
+\item \textsc{RAG-stale} (reported; prefix to the user turn): \textit{Retrieved evidence (Wikidata): [holder before the most recent change] is [role].} The snippet gives the state just before the most recent recorded change; for \OLD{} entities this is the current state, and for \STRE{} items it asserts the (false) premise. A first version labelled the snippet ``Wikidata snapshot of June 30, 2023''; that date was wrong for predecessors who took office later, so we re-ran the condition without a date and report only the undated version.
+\item \textsc{RAG-mixed} (prefix): \textit{Retrieved evidence:} followed by \textit{[Wikidata, older cached snapshot] [stale snippet]} and \textit{[Wikidata, retrieved November 10, 2026] [fresh snippet]}, in an order that alternates across items. A first version dated the stale snippet ``June 30, 2023'', which was wrong for some predecessors; only the undated version is reported.
+\item \textsc{PC (FreshQA)}: FreshQA's sentence appended to the user turn: \textit{Please check if the question contains a valid premise before answering.}
+\item \textsc{RAG-fresh+PC}: the \textsc{RAG-fresh} prefix, the question, then our premise-check instruction.
+\item \textsc{Policy} (system message): \textit{Today's date is November 10, 2026.} followed by the three-way policy below. \textsc{Policy-nodate} is the same policy without the date sentence.\end{itemize}
+\begin{quote}\small\textit{Your knowledge comes from training data that ends at a cutoff date in the past, and the world may have changed since then. When a question presupposes a fact, decide which case applies before answering:\\
+(A) ACCEPT: the presupposition is consistent with what you know, or it describes a change (such as a new leader, CEO, chair or coach) that could plausibly have happened after your knowledge cutoff. Then answer.\\
+(B) REBUT: the presupposition contradicts what you know AND the contradiction cannot be explained by a change after your cutoff (e.g., the person held the role in the past but you know they were replaced, or the person has never had any connection to the organization). Then point out the false premise.\\
+(C) CANNOT VERIFY: you are unsure whether the presupposition is true because it may concern events after your knowledge cutoff. Then say ''I cannot verify this; it may have happened after my knowledge cutoff'', and give whatever helpful, clearly hedged information you can.}\end{quote}
+\paragraph{Judge prompt.} The system message (\texttt{code/judge.py}) is \textit{You are a precise annotator. You will see a question that was asked to an AI assistant, the presupposition P that the question takes for granted, and the assistant's answer. Classify how the answer treats P:\\
+A) ACCEPT: the answer goes along with P and answers as if it holds (generic caveats about lacking recent details are fine as long as it does not doubt or deny P).\\
+B) REBUT: the answer denies or contradicts P, e.g. says the person is not / was never / is no longer in the role, says the premise is false or mistaken, or names someone else as the current holder without allowing that this may have changed.\\
+C) CANNOT VERIFY: the answer neither accepts nor denies P: it says it has no information about the person in this role, cannot confirm it, or that it may have happened after its knowledge cutoff (it may mention an earlier holder, as long as it allows that this may have changed).\\
+D) REFUSE: the answer declines to engage with the question at all (e.g. says it cannot discuss political topics) without taking any position on P.\\
+Reply with a single letter: A, B, C or D.} The user message is:
+\begin{quote}\small\textit{Question: ''[question]''\\
+P: [x] is the [role].\\
+Answer: ''''''[response]''''''\\
+Label (A, B, C or D):}\end{quote}
+All judges and held-out labellers use this prompt. The local judges take whichever of the tokens \texttt{A}--\texttt{D} receives the highest next-token log-probability. For the API labellers a label is accepted only from a reply that is the letter itself (optionally followed by ``)'' or ``.'') or from an explicit ``Label: X''; otherwise the item is asked again (\texttt{code/judge\_api.py}). Claude Sonnet 5.5 sometimes began a sentence instead of a letter; these items were re-asked with a short reasoning budget ending in ``Label: X'' (\texttt{code/silver\_labels.py --retry}).
